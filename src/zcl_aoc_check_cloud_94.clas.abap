@@ -36,7 +36,7 @@ ENDCLASS.
 CLASS zcl_aoc_check_cloud_94 IMPLEMENTATION.
 
   METHOD if_ci_atc_check~get_meta_data.
-    meta_data = NEW meta_data( ).
+    meta_data = NEW lcl_meta_data( ).
   ENDMETHOD.
 
   METHOD if_ci_atc_check~run.
@@ -56,8 +56,7 @@ CLASS zcl_aoc_check_cloud_94 IMPLEMENTATION.
                 procedure = <procedure>
                 statement_idx = statement_idx
                 statement = <statement>
-                token_idx = token_idx
-              ) INTO TABLE findings.
+                token_idx = token_idx ) INTO TABLE findings.
 
             WHEN 'NP' OR 'CP'.
               INSERT LINES OF analyze_pattern(
@@ -66,8 +65,7 @@ CLASS zcl_aoc_check_cloud_94 IMPLEMENTATION.
                 procedure = <procedure>
                 statement_idx = statement_idx
                 statement = <statement>
-                token_idx = token_idx
-              ) INTO TABLE findings.
+                token_idx = token_idx ) INTO TABLE findings.
 
           ENDCASE.
         ENDLOOP.
@@ -82,25 +80,20 @@ CLASS zcl_aoc_check_cloud_94 IMPLEMENTATION.
     IF <next_token>-lexeme CA wrong_wildcard AND <next_token>-lexeme NA correct_wildcard.
       DATA(quickfixes) = assistant_factory->create_quickfixes( ).
       quickfixes->create_quickfix( COND #(
-        WHEN finding_code = finding_codes-like THEN quickfix_codes-like ELSE quickfix_codes-pattern_op
-      ) )->replace(
-        context = assistant_factory->create_quickfix_context( VALUE #(
-          procedure_id = procedure-id
-          statements = VALUE #( from = statement_idx to = statement_idx )
-          tokens = VALUE #( from = token_idx + 1 to = token_idx + 1 )
-        ) )
-        code = VALUE #( ( replace( val = <next_token>-lexeme sub = wrong_wildcard with = correct_wildcard ) ) )
-      ).
+          WHEN finding_code = finding_codes-like THEN quickfix_codes-like ELSE quickfix_codes-pattern_op
+        ) )->replace(
+          context = assistant_factory->create_quickfix_context( VALUE #(
+            procedure_id = procedure-id
+            statements = VALUE #( from = statement_idx to = statement_idx )
+            tokens = VALUE #( from = token_idx + 1 to = token_idx + 1 ) ) )
+          code = VALUE #( ( replace( val = <next_token>-lexeme sub = wrong_wildcard with = correct_wildcard ) ) ) ).
       DATA(finding_location) = code_provider->get_statement_location( statement ).
       finding_location-position = <next_token>-position.
       INSERT VALUE #(
         code = finding_code
         location = finding_location
         checksum = code_provider->get_statement_checksum( statement )
-        details = assistant_factory->create_finding_details( )->attach_quickfixes(
-          quickfixes
-        )
-      ) INTO TABLE findings.
+        details = assistant_factory->create_finding_details( )->attach_quickfixes( quickfixes ) ) INTO TABLE findings.
     ENDIF.
   ENDMETHOD.
 

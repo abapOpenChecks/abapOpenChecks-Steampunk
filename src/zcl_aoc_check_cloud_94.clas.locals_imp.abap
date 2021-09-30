@@ -1,9 +1,9 @@
-CLASS meta_data DEFINITION FINAL.
+CLASS lcl_meta_data DEFINITION FINAL.
   PUBLIC SECTION.
     INTERFACES if_ci_atc_check_meta_data.
 ENDCLASS.
 
-CLASS meta_data IMPLEMENTATION.
+CLASS lcl_meta_data IMPLEMENTATION.
 
   METHOD if_ci_atc_check_meta_data~get_checked_object_types.
     types = VALUE #( ( 'CLAS' ) ( 'PROG' ) ( 'FUGR' ) ).

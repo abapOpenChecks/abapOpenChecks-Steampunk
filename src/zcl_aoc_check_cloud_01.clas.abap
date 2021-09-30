@@ -13,7 +13,7 @@ ENDCLASS.
 
 CLASS zcl_aoc_check_cloud_01 IMPLEMENTATION.
   METHOD if_ci_atc_check~get_meta_data.
-    meta_data = NEW meta_data( ).
+    meta_data = NEW lcl_meta_data( ).
   ENDMETHOD.
 
   METHOD if_ci_atc_check~run.
@@ -21,7 +21,7 @@ CLASS zcl_aoc_check_cloud_01 IMPLEMENTATION.
     DATA(procedures) = code_provider->get_procedures( code_provider->object_to_comp_unit( object ) ).
     LOOP AT procedures->* ASSIGNING FIELD-SYMBOL(<procedure>).
       LOOP AT <procedure>-statements ASSIGNING FIELD-SYMBOL(<statement>)
-      WHERE keyword = 'IF' OR keyword = 'ELSE'.
+          WHERE keyword = 'IF' OR keyword = 'ELSE'.
         DATA(l_tabix) = sy-tabix.
         DATA(l_is_finding) = abap_true.
         IF <procedure>-statements[ l_tabix + 1 ]-keyword = 'IF'.
@@ -41,7 +41,7 @@ CLASS zcl_aoc_check_cloud_01 IMPLEMENTATION.
               WHEN 'ENDIF'.
                 l_open_ifs -= 1.
                 IF l_open_ifs = 0.
-                  IF l_idx < lines( <procedure>-statements ) AND <procedure>-statements[ l_idx + 1 ]-keyword <> 'ENDIF'.
+                  IF lines( <procedure>-statements ) > l_idx AND <procedure>-statements[ l_idx + 1 ]-keyword <> 'ENDIF'.
                     l_is_finding = abap_false.
                   ENDIF.
                   EXIT.
@@ -65,7 +65,6 @@ CLASS zcl_aoc_check_cloud_01 IMPLEMENTATION.
     ENDLOOP.
 
   ENDMETHOD.
-
 
   METHOD if_ci_atc_check~set_assistant_factory.
 
