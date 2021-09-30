@@ -20,7 +20,7 @@
     }
   ],
   "syntax": {
-    "version": "v755",
+    "version": "Cloud",
     "errorNamespace": "^(Z|Y|LCL_|TY_|LIF_)",
     "globalConstants": [],
     "globalMacros": []
@@ -450,16 +450,7 @@
       "severity": "Error",
       "ignoreExceptions": true
     },
-    "local_class_naming": {
-      "exclude": [],
-      "severity": "Error",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "local": "^LCL_.+$",
-      "exception": "^LCX_.+$",
-      "test": "^LTCL_.+$"
-    },
+    "local_class_naming": false,
     "local_testclass_location": {
       "exclude": [],
       "severity": "Error"
@@ -501,18 +492,7 @@
       "exclude": [],
       "severity": "Error"
     },
-    "method_parameter_names": {
-      "exclude": [],
-      "severity": "Error",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "ignoreExceptions": true,
-      "importing": "^I._.+$",
-      "returning": "^R._.+$",
-      "changing": "^C._.+$",
-      "exporting": "^E._.+$"
-    },
+    "method_parameter_names": false,
     "mix_returning": {
       "exclude": [],
       "severity": "Error"
