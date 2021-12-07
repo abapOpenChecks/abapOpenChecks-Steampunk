@@ -11,7 +11,7 @@
   "dependencies": [
     {
       "folder": "/deps2",
-      "files": "/**/*.*"
+      "files": "/*.*"
     }
   ],
   "syntax": {
