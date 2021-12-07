@@ -421,13 +421,9 @@
     "line_length": {
       "exclude": [],
       "severity": "Error",
-      "length": 120
+      "length": 200
     },
-    "line_only_punc": {
-      "exclude": [],
-      "severity": "Error",
-      "ignoreExceptions": true
-    },
+    "line_only_punc": false,
     "local_class_naming": false,
     "local_testclass_location": {
       "exclude": [],
@@ -462,7 +458,7 @@
       "exclude": [],
       "severity": "Error",
       "statements": 100,
-      "errorWhenEmpty": true,
+      "errorWhenEmpty": false,
       "ignoreTestClasses": false,
       "checkForms": true
     },
