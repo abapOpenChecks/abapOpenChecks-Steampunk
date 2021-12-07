@@ -122,19 +122,7 @@
       "exclude": [],
       "severity": "Error"
     },
-    "class_attribute_names": {
-      "exclude": [],
-      "severity": "Error",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "ignoreExceptions": true,
-      "ignoreLocal": true,
-      "ignoreInterfaces": false,
-      "statics": "^G._.+$",
-      "instance": "^M._.+$",
-      "constants": ""
-    },
+    "class_attribute_names": false,
     "cloud_types": {
       "exclude": [],
       "severity": "Error"
@@ -384,12 +372,7 @@
       "exclude": [],
       "severity": "Error"
     },
-    "in_statement_indentation": {
-      "exclude": [],
-      "severity": "Error",
-      "blockStatements": 2,
-      "ignoreExceptions": true
-    },
+    "in_statement_indentation": false,
     "indentation": {
       "exclude": [],
       "severity": "Error",
@@ -397,8 +380,8 @@
       "alignTryCatch": false,
       "selectionScreenBlockIndentation": false,
       "globalClassSkipFirst": false,
-      "ignoreGlobalClassDefinition": false,
-      "ignoreGlobalInterface": false
+      "ignoreGlobalClassDefinition": true,
+      "ignoreGlobalInterface": true
     },
     "inline_data_old_versions": {
       "exclude": [],
