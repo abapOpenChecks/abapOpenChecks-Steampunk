@@ -1,7 +1,7 @@
 {
   "global": {
     "files": "/src/**/*.*",
-    "exclude": [],
+    "exclude": [".*test_.*\\..*"],
     "skipGeneratedGatewayClasses": true,
     "skipGeneratedPersistentClasses": true,
     "skipGeneratedFunctionGroups": true,
@@ -106,8 +106,8 @@
       "updateDatabase": true,
       "insertDatabase": true,
       "modifyDatabase": true,
-      "readTable": true,
-      "assign": true,
+      "readTable": false,
+      "assign": false,
       "find": true
     },
     "check_syntax": {
