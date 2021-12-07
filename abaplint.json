@@ -370,7 +370,7 @@
     },
     "implement_methods": {
       "exclude": [],
-      "severity": "Error"
+      "severity": "Info"
     },
     "in_statement_indentation": false,
     "indentation": {
@@ -487,7 +487,7 @@
     },
     "nesting": {
       "exclude": [],
-      "severity": "Error",
+      "severity": "Info",
       "depth": 5
     },
     "newline_between_methods": {
