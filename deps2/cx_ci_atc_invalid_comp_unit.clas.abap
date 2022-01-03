@@ -1,0 +1,17 @@
+CLASS cx_ci_atc_invalid_comp_unit DEFINITION
+  PUBLIC
+  INHERITING FROM cx_dynamic_check
+  FINAL
+  CREATE PUBLIC .
+
+PUBLIC SECTION.
+
+PROTECTED SECTION.
+PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS cx_ci_atc_invalid_comp_unit IMPLEMENTATION.
+
+ENDCLASS.

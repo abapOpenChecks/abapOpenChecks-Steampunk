@@ -1,7 +1,7 @@
 {
   "global": {
     "files": "/src/**/*.*",
-    "exclude": [],
+    "exclude": [".*test_.*\\..*"],
     "skipGeneratedGatewayClasses": true,
     "skipGeneratedPersistentClasses": true,
     "skipGeneratedFunctionGroups": true,
@@ -10,13 +10,8 @@
   },
   "dependencies": [
     {
-      "url": "https://github.com/abaplint/deps",
-      "folder": "/deps",
-      "files": "/src/**/*.*"
-    },
-    {
       "folder": "/deps2",
-      "files": "/**/*.*"
+      "files": "/*.*"
     }
   ],
   "syntax": {
@@ -111,8 +106,8 @@
       "updateDatabase": true,
       "insertDatabase": true,
       "modifyDatabase": true,
-      "readTable": true,
-      "assign": true,
+      "readTable": false,
+      "assign": false,
       "find": true
     },
     "check_syntax": {
@@ -127,19 +122,7 @@
       "exclude": [],
       "severity": "Error"
     },
-    "class_attribute_names": {
-      "exclude": [],
-      "severity": "Error",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "ignoreExceptions": true,
-      "ignoreLocal": true,
-      "ignoreInterfaces": false,
-      "statics": "^G._.+$",
-      "instance": "^M._.+$",
-      "constants": ""
-    },
+    "class_attribute_names": false,
     "cloud_types": {
       "exclude": [],
       "severity": "Error"
@@ -387,14 +370,9 @@
     },
     "implement_methods": {
       "exclude": [],
-      "severity": "Error"
+      "severity": "Info"
     },
-    "in_statement_indentation": {
-      "exclude": [],
-      "severity": "Error",
-      "blockStatements": 2,
-      "ignoreExceptions": true
-    },
+    "in_statement_indentation": false,
     "indentation": {
       "exclude": [],
       "severity": "Error",
@@ -402,8 +380,8 @@
       "alignTryCatch": false,
       "selectionScreenBlockIndentation": false,
       "globalClassSkipFirst": false,
-      "ignoreGlobalClassDefinition": false,
-      "ignoreGlobalInterface": false
+      "ignoreGlobalClassDefinition": true,
+      "ignoreGlobalInterface": true
     },
     "inline_data_old_versions": {
       "exclude": [],
@@ -443,13 +421,9 @@
     "line_length": {
       "exclude": [],
       "severity": "Error",
-      "length": 120
+      "length": 200
     },
-    "line_only_punc": {
-      "exclude": [],
-      "severity": "Error",
-      "ignoreExceptions": true
-    },
+    "line_only_punc": false,
     "local_class_naming": false,
     "local_testclass_location": {
       "exclude": [],
@@ -484,7 +458,7 @@
       "exclude": [],
       "severity": "Error",
       "statements": 100,
-      "errorWhenEmpty": true,
+      "errorWhenEmpty": false,
       "ignoreTestClasses": false,
       "checkForms": true
     },
@@ -513,7 +487,7 @@
     },
     "nesting": {
       "exclude": [],
-      "severity": "Error",
+      "severity": "Info",
       "depth": 5
     },
     "newline_between_methods": {
