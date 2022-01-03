@@ -10,13 +10,17 @@
   },
   "dependencies": [
     {
+      "url": "https://github.com/abapedia/steampunk-2111-api",
+      "files": "/src/**/*.*"
+    },
+    {
       "folder": "/deps2",
       "files": "/*.*"
     }
   ],
   "syntax": {
     "version": "Cloud",
-    "errorNamespace": "^(Z|Y|LCL_|TY_|LIF_)",
+    "errorNamespace": ".",
     "globalConstants": [],
     "globalMacros": []
   },
