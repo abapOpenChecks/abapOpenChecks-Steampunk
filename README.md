@@ -2,7 +2,7 @@
 
 Since the API used by the abapOpenChecks to implement ABAP Test Cockpit (ATC) checks is not released for use in an ABAP cloud environment, usage of the exising abapOpenChecks is not possible in such an environment.
 
-This repository contains re-implementations of abapOpenChecks using an API released for use in Steampunk (currently still gated behind a feature toggle that can be activated on demand by SAP). Since this implementation of the checks does not need to be backwards compatible, we can take full advantage of modern ABAP features and new ATC feature like automated quick fixes. 
+This repository contains re-implementations of abapOpenChecks using an API released for use in Steampunk. Since this implementation of the checks does not need to be backwards compatible, we can take full advantage of modern ABAP features and new ATC features like automated quick fixes. 
 
 ## Installation
 
