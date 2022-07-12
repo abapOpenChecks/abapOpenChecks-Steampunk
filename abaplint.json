@@ -10,12 +10,8 @@
   },
   "dependencies": [
     {
-      "url": "https://github.com/abapedia/steampunk-2111-api",
+      "url": "https://github.com/abapedia/steampunk-2205-api",
       "files": "/src/**/*.*"
-    },
-    {
-      "folder": "/deps2",
-      "files": "/*.*"
     }
   ],
   "syntax": {
@@ -23,18 +19,31 @@
     "errorNamespace": "."
   },
   "rules": {
+    "align_parameters": false,
+    "cds_legacy_view": true,
+    "cds_parser_error": true,
+    "classic_exceptions_overlap": true,
+    "local_testclass_consistency": true,
+    "no_aliases": true,
+    "no_chained_assignment": true,
+    "no_external_form_calls": true,
+    "no_inline_in_optional_branches": false,
+    "nrob_consistency": true,
+    "omit_preceding_zeros": true,
+    "pragma_style": true,
+    "prefer_corresponding": true,
+    "slow_parameter_passing": true,
+    "static_call_via_instance": true,
+    "superfluous_value": true,
+    "unnecessary_chaining": true,
+    "unnecessary_pragma": true,
     "7bit_ascii": true,
     "abapdoc": false,
     "allowed_object_naming": true,
-    "allowed_object_types": {
-      "exclude": [],
-      "severity": "Error",
-      "allowed": []
-    },
+    "allowed_object_types": true,
     "ambiguous_statement": true,
     "avoid_use": {
-      "exclude": [],
-      "severity": "Error",
+      "testSeams": true,
       "define": true,
       "statics": true,
       "defaultKey": true,
@@ -67,7 +76,6 @@
     },
     "check_ddic": true,
     "check_include": true,
-    "check_no_handler_pragma": true,
     "check_subrc": {
       "exclude": [],
       "severity": "Error",
@@ -95,26 +103,18 @@
     },
     "constant_classes": false,
     "constructor_visibility_public": true,
-    "contains_tab": {
-      "exclude": [],
-      "severity": "Error",
-      "spaces": 1
-    },
-    "cyclic_oo": {
-      "exclude": [],
-      "severity": "Error",
-      "skip": []
-    },
+    "contains_tab": true,
+    "cyclic_oo": true,
     "cyclomatic_complexity": {
       "exclude": [],
       "severity": "Error",
       "max": 20
     },
     "dangerous_statement": {
-      "exclude": [],
-      "severity": "Error",
       "execSQL": true,
       "kernelCall": true,
+      "dynamicSQL": true,
+      "exportDynpro": true,
       "systemCall": true,
       "insertReport": true,
       "generateDynpro": true,
@@ -122,8 +122,7 @@
       "generateSubroutine": true,
       "deleteReport": true,
       "deleteTextpool": true,
-      "deleteDynpro": true,
-      "importDynpro": true
+      "deleteDynpro": true
     },
     "db_operation_in_loop": true,
     "definitions_top": true,
@@ -144,9 +143,8 @@
     },
     "empty_statement": true,
     "empty_structure": {
-      "exclude": [],
-      "severity": "Error",
       "loop": true,
+      "when": true,
       "if": true,
       "while": true,
       "case": true,
@@ -334,7 +332,6 @@
     },
     "line_only_punc": false,
     "local_class_naming": false,
-    "local_testclass_location": true,
     "local_variable_names": false,
     "main_file_contents": true,
     "many_parentheses": true,
@@ -372,11 +369,7 @@
       "count": 3,
       "logic": "less"
     },
-    "no_public_attributes": {
-      "exclude": [],
-      "severity": "Error",
-      "allowReadOnly": false
-    },
+    "no_public_attributes": true,
     "no_yoda_conditions": {
       "exclude": [],
       "severity": "Error",
@@ -408,9 +401,9 @@
       "shlp": "^Z"
     },
     "obsolete_statement": {
-      "exclude": [],
-      "severity": "Error",
       "refresh": true,
+      "occurences": true,
+      "clientSpecified": true,
       "compute": true,
       "add": true,
       "subtract": true,
@@ -440,7 +433,6 @@
     "parser_702_chaining": true,
     "parser_error": true,
     "parser_missing_space": true,
-    "pragma_placement": true,
     "prefer_inline": true,
     "prefer_is_not": true,
     "prefer_raise_exception_new": true,
@@ -481,20 +473,8 @@
       "selectStar": true,
       "starOkayIfFewColumns": 10
     },
-    "selection_screen_naming": {
-      "exclude": [],
-      "severity": "Error",
-      "patternKind": "required",
-      "ignoreNames": [],
-      "ignorePatterns": [],
-      "parameter": "^P_.+$",
-      "selectOption": "^S_.+$"
-    },
-    "sequential_blank": {
-      "exclude": [],
-      "severity": "Error",
-      "lines": 4
-    },
+    "selection_screen_naming": true,
+    "sequential_blank": true,
     "short_case": {
       "exclude": [],
       "severity": "Error",
