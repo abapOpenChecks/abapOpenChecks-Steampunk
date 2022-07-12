@@ -12,10 +12,6 @@
     {
       "url": "https://github.com/abapedia/steampunk-2205-api",
       "files": "/src/**/*.*"
-    },
-    {
-      "folder": "/deps2",
-      "files": "/*.*"
     }
   ],
   "syntax": {
